@@ -1,0 +1,44 @@
+blackbox:
+  extraEnvFrom:
+    - configMapRef:
+        name: cm-blackbox
+  fullnameOverride: blackbox-exporter-prom
+  kind: Deployment
+  pspEnabled: false
+  resources:
+    limits:
+      cpu: "1"
+      memory: 128Mi
+    requests:
+      cpu: 10m
+      memory: 25Mi
+  serviceAccount:
+    create: false
+  securityContext:
+    runAsGroup: 1000905000
+    runAsNonRoot: true
+    runAsUser: 1000905000
+  podSecurityContext:
+    runAsGroup: 1000905000
+    runAsNonRoot: true
+    runAsUser: 1000905000
+  config:
+    modules:
+      http_200_204_403:
+        http:
+          follow_redirects: true
+          preferred_ip_protocol: ip4
+          valid_status_codes:
+          - 200
+          - 204
+        prober: http
+        timeout: 5s
+      http_check:
+        http:
+          follow_redirects: true
+          preferred_ip_protocol: ip4
+          valid_http_versions:
+          - HTTP/1.1
+          - HTTP/2.0
+        prober: http
+        timeout: 5s

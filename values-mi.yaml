@@ -1,0 +1,21 @@
+application: cpin
+proxy: true
+sondes:
+  - name: console-dso
+    cible: https://console.dso.interieur.rie.gouv.fr/
+    module: http_check
+  - name: vault-external
+    cible: https://vault.dso.interieur.rie.gouv.fr/
+    module: http_check
+  - name: gitlab-dso
+    cible: https://gitlab.dso.interieur.rie.gouv.fr/
+    module: http_check
+  - name: sonar-formation
+    cible: https://sonar.dso.interieur.rie.gouv.fr/
+    module: http_check
+  - name: argocd-formation
+    cible: https://argocd.dso.interieur.rie.gouv.fr/
+    module: http_check
+  - name: harbor-formation
+    cible: https://harbor.dso.interieur.rie.gouv.fr/
+    module: http_check

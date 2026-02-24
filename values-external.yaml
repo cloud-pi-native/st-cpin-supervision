@@ -1,0 +1,20 @@
+application: cpin
+sondes:
+  - name: console-external
+    cible: https://console.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: vault-external
+    cible: https://vault.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: gitlab-external
+    cible: https://gitlab.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: sonar-external
+    cible: https://sonar.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: argocd-external
+    cible: https://argocd.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: harbor-external
+    cible: https://harbor.external.cpin.numerique-interieur.com/
+    module: http_check

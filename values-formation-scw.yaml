@@ -1,0 +1,20 @@
+application: cpin
+sondes:
+  - name: console-formation
+    cible: https://console.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: vault-formation
+    cible: https://vault.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: gitlab-formation
+    cible: https://gitlab.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: sonar-formation
+    cible: https://sonar.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: argocd-formation
+    cible: https://argocd.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: harbor-formation
+    cible: https://harbor.dso.formation.numerique-interieur.fr/
+    module: http_check

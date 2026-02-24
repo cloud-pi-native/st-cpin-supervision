@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: cm-blackbox
+data:
+{{ if .Values.proxy}}
+  http_proxy: {{ .Values.proxy_url }}
+  https_proxy: {{ .Values.proxy_url }}
+  HTTP_PROXY: {{ .Values.proxy_url }}
+  HTTPS_PROXY: {{ .Values.proxy_url }}
+{{ end }}
