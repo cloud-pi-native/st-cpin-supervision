@@ -1,0 +1,68 @@
+{{- range $sonde := .Values.sondes }}
+# Type check
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ $.Values.application }}-{{ $sonde.name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    monitoring: {{ $.Values.application }}
+    app.kubernetes.io/instance: blackbox-exporter
+    app.kubernetes.io/name: prometheus-blackbox-exporter
+spec:
+  jobLabel: blackbox-exporter
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+      app.kubernetes.io/name: blackbox
+  endpoints:
+    - path: /probe
+      port: http
+      scheme: http
+      interval: {{ $sonde.interval }}
+      scrapeTimeout: 30s
+      metricRelabelings:
+        - action: replace
+          targetLabel: instance
+          replacement: {{ $sonde.cible }}
+          sourceLabels:
+            - instance
+        - action: replace
+          targetLabel: target
+          replacement: {{ $.Values.application }}-{{ $sonde.name }}-{{ $sonde.type }}
+          sourceLabels:
+            - target
+        - action: replace
+          targetLabel: namespace
+          replacement: {{ $.Release.Namespace }}
+          sourceLabels:
+            - namespace
+         {{- if $sonde.metricRelabelings }}
+         {{- range $metricRelabelings := $sonde.metricRelabelings }}
+        - targetLabel: {{ $metricRelabelings.destLabel | nospace | lower}}
+          replacement: {{ $metricRelabelings.value | nospace | lower}}
+         {{- end }}
+         {{- end }}
+      relabelings:
+        - action: replace
+          targetLabel: prober
+          replacement: {{ $sonde.type }}
+        - action: replace
+          targetLabel: module
+          replacement: {{ $sonde.module }}
+        - action: replace
+          targetLabel: sonde
+          replacement: {{ $sonde.name }}
+         {{- if $sonde.relabelings }}
+         {{- range $relabelings := $sonde.relabelings }}
+        - targetLabel: {{ $relabelings.destLabel | nospace | lower}}
+          replacement: {{ $relabelings.value | nospace | lower}}
+         {{- end }}
+         {{- end }}
+      params:
+        module:
+          - {{ $sonde.module }}
+        target:
+          - {{ $sonde.cible }}
+---
+{{- end }}
