@@ -1,5 +1,26 @@
 application: cpin
+proxy: false
 sondes:
+# EXTERNAL
+  - name: console-external
+    cible: https://console.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: vault-external
+    cible: https://vault.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: gitlab-external
+    cible: https://gitlab.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: sonar-external
+    cible: https://sonar.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: argocd-external
+    cible: https://argocd.external.cpin.numerique-interieur.com/
+    module: http_check
+  - name: harbor-external
+    cible: https://harbor.external.cpin.numerique-interieur.com/
+    module: http_check
+# FORMATION
   - name: console-formation
     cible: https://console.dso.formation.numerique-interieur.fr/
     module: http_check
@@ -16,5 +37,24 @@ sondes:
     cible: https://argocd.dso.formation.numerique-interieur.fr/
     module: http_check
   - name: harbor-formation
+    cible: https://harbor.dso.formation.numerique-interieur.fr/
+    module: http_check
+# CPIN
+  - name: console-cpin-scw
+    cible: https://console.dso.cpin.numerique-interieur.fr/
+    module: http_check
+  - name: vault-cpin-scw
+    cible: https://vault.dso.cpin.numerique-interieur.fr/
+    module: http_check
+  - name: gitlab-cpin-scw
+    cible: https://gitlab.dso.cpin.numerique-interieur.fr/
+    module: http_check
+  - name: sonar-cpin-scw
+    cible: https://sonar.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: argocd-cpin-scw
+    cible: https://argocd.dso.formation.numerique-interieur.fr/
+    module: http_check
+  - name: harbor-cpin-scw
     cible: https://harbor.dso.formation.numerique-interieur.fr/
     module: http_check
