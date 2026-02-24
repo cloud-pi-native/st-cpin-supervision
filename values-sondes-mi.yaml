@@ -14,7 +14,7 @@ sondes:
     cible: https://sonar.dso.interieur.rie.gouv.fr/
     module: http_check
   - name: argocd-formation
-    cible: https://argocd.dso.interieur.rie.gouv.fr/
+    cible: https://gitops.dso.interieur.rie.gouv.fr/
     module: http_check
   - name: harbor-formation
     cible: https://harbor.dso.interieur.rie.gouv.fr/
