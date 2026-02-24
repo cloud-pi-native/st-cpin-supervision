@@ -11,6 +11,11 @@ blackbox:
       memory: 25Mi
   serviceAccount:
     create: false
+  podSecurityContext:
+    fsGroup: 1000885000
+    runAsGroup: 1000885000
+    runAsNonRoot: true
+    runAsUser: 1000885000
   config:
     modules:
       http_200_204_403:
