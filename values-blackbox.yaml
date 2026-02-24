@@ -1,7 +1,7 @@
 blackbox:
   extraEnvFrom:
     - secretRef:
-        name: cm-blackbox
+        name: sec-blackbox
   fullnameOverride: blackbox-exporter-prom
   kind: Deployment
   pspEnabled: false
