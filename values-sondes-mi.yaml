@@ -11,11 +11,11 @@ sondes:
     cible: https://gitlab.dso.interieur.rie.gouv.fr/
     module: http_check
   - name: sonar-formation
-    cible: https://sonar.dso.interieur.rie.gouv.fr/
+    cible: https://sonarqube.dso.interieur.rie.gouv.fr/
     module: http_check
   - name: argocd-formation
     cible: https://gitops.dso.interieur.rie.gouv.fr/
     module: http_check
   - name: harbor-formation
-    cible: https://harbor.dso.interieur.rie.gouv.fr/
+    cible: https://registry.dso.interieur.rie.gouv.fr/
     module: http_check
