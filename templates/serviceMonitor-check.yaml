@@ -23,6 +23,11 @@ spec:
       scrapeTimeout: 30s
       metricRelabelings:
         - action: replace
+          targetLabel: environnement
+          replacement: {{ $sonde.environnement | default "interieur" }}
+          sourceLabels:
+            - environnement
+        - action: replace
           targetLabel: instance
           replacement: {{ $sonde.cible }}
           sourceLabels:

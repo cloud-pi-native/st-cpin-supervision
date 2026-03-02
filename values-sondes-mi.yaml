@@ -4,75 +4,100 @@ sondes:
   - name: console-dso
     cible: https://console.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
   - name: vault-dso
     cible: https://vault.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
   - name: gitlab-dso
     cible: https://gitlab.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
   - name: sonar-dso
     cible: https://sonarqube.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
   - name: argocd-dso
     cible: https://gitops.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
   - name: harbor-dso
     cible: https://registry.dso.interieur.rie.gouv.fr/
     module: http_check
+    environnement: mi
 # EXTERNAL
   - name: console-external
     cible: https://console.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
   - name: vault-external
     cible: https://vault.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
   - name: gitlab-external
     cible: https://gitlab.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
   - name: sonar-external
     cible: https://sonar.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
   - name: argocd-external
     cible: https://argocd.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
   - name: harbor-external
     cible: https://harbor.external.cpin.numerique-interieur.com/
     module: http_check
+    environnement: external
 # FORMATION
   - name: console-formation
     cible: https://console.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
   - name: vault-formation
     cible: https://vault.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
   - name: gitlab-formation
     cible: https://gitlab.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
   - name: sonar-formation
     cible: https://sonar.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
   - name: argocd-formation
     cible: https://argocd.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
   - name: harbor-formation
     cible: https://harbor.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: formation
 # CPIN
   - name: console-cpin-scw
     cible: https://console.dso.cpin.numerique-interieur.fr/
     module: http_check
+    environnement: cpin-scw
   - name: vault-cpin-scw
     cible: https://vault.dso.cpin.numerique-interieur.fr/
     module: http_check
+    environnement: cpin-scw
   - name: gitlab-cpin-scw
     cible: https://gitlab.dso.cpin.numerique-interieur.fr/
     module: http_check
+    environnement: cpin-scw
   - name: sonar-cpin-scw
     cible: https://sonar.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: cpin-scw
   - name: argocd-cpin-scw
     cible: https://argocd.dso.formation.numerique-interieur.fr/
     module: http_check
+    environnement: cpin-scw
   - name: harbor-cpin-scw
     cible: https://harbor.dso.formation.numerique-interieur.fr/
     module: http_check
+   environnement: cpin-scw
+ 
