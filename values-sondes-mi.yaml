@@ -99,5 +99,5 @@ sondes:
   - name: harbor-cpin-scw
     cible: https://harbor.dso.formation.numerique-interieur.fr/
     module: http_check
-   environnement: cpin-scw
+    environnement: cpin-scw
  
