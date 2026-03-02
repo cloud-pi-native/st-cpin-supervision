@@ -15,13 +15,13 @@ blackbox:
   serviceAccount:
     create: false
   securityContext:
-    runAsGroup: 1000915000
+    runAsGroup: 1000965000
     runAsNonRoot: true
-    runAsUser: 1000915000
+    runAsUser: 1000965000
   podSecurityContext:
-    runAsGroup: 1000915000
+    runAsGroup: 1000965000
     runAsNonRoot: true
-    runAsUser: 1000915000
+    runAsUser: 1000965000
   config:
     modules:
       http_200_204_403:
