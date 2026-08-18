@@ -25,31 +25,6 @@ sondes:
     cible: https://registry.dso.interieur.rie.gouv.fr/
     module: http_check
     environnement: mi
-# EXTERNAL
-  - name: console-external
-    cible: https://console.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
-  - name: vault-external
-    cible: https://vault.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
-  - name: gitlab-external
-    cible: https://gitlab.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
-  - name: sonar-external
-    cible: https://sonar.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
-  - name: argocd-external
-    cible: https://argocd.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
-  - name: harbor-external
-    cible: https://harbor.external.cpin.numerique-interieur.com/
-    module: http_check
-    environnement: external
 # FORMATION
   - name: console-formation
     cible: https://console.dso.formation.numerique-interieur.fr/
